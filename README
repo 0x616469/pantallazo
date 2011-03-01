@@ -1,0 +1,7 @@
+pantallazo (spanish for 'screenshot') is a small script that does the
+following:
+- creates a screenshot (you can select an area or just click on a window)
+- puts the screenshot into to your Dropbox public folder
+- creates a short url to the file through the service liip.to
+- copies the short url to your clipboard or alternatively displays it in a
+  message window
