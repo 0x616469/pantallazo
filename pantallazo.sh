@@ -52,6 +52,7 @@ fi
 DBDIR=~/Dropbox/Public # path to your drobox public folder on your machine
 SSDIR=screenshots # directory inside the public folder that receives the screenshots
 LIIPTO="http://liip.to/api/txt/?url=" # URL shortener service
+LOG=~/.pantallazo.log
 
 [ -d $DBDIR/$SSDIR ] || mkdir $DBDIR/$SSDIR
 cd $DBDIR/$SSDIR
@@ -68,6 +69,11 @@ then
     xmessage $SHORTURL
 else
     echo $SHORTURL | xclip -sel clip
+fi
+
+if [ -n "$LOG" ]
+then
+    echo "`date '+%Y%m%d %H:%M:%S:'` $PUBURL | $SHORTURL" >> $LOG
 fi
 
 exit $?
